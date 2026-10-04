@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abel's Can Cleaners</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#173522;background:#f4f8f5}
+header{background:#173522;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:22px;font-weight:800}nav a{color:white;text-decoration:none;margin-left:18px;font-weight:700}
+.hero{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#dcefe2,#fff)}
+.hero h1{font-size:clamp(42px,8vw,72px);margin:10px 0;color:#173522}
+.hero p{font-size:20px;color:#52665a;max-width:650px;margin:0 auto 28px}
+.btn{display:inline-block;background:#2f7d4a;color:#fff;border:0;border-radius:12px;padding:14px 22px;font-weight:800;text-decoration:none;cursor:pointer}
+section{max-width:1050px;margin:auto;padding:70px 20px}
+h2{text-align:center;font-size:36px;margin:0 0 35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;padding:28px;border-radius:18px;box-shadow:0 8px 25px #17352212}
+.card h3{color:#2f7d4a}.icon{font-size:42px}.price{font-size:34px;font-weight:900;color:#2f7d4a}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px}.photo{height:280px;border:2px dashed #91aa99;border-radius:18px;display:grid;place-items:center;text-align:center;background:#e7efe9;font-weight:800;font-size:20px}
+form{max-width:650px;margin:auto;background:#fff;padding:30px;border-radius:18px;box-shadow:0 8px 25px #17352212}
+label{display:block;font-weight:700;margin:12px 0 6px}input,select,textarea{width:100%;padding:13px;border:1px solid #cbd8cf;border-radius:9px;font:inherit}textarea{min-height:120px}
+footer{text-align:center;background:#102519;color:white;padding:30px}
+@media(max-width:750px){nav{display:none}.grid,.gallery{grid-template-columns:1fr}section{padding:55px 18px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">🗑️ Abel's Can Cleaners</div>
+<nav><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#booking">Book</a></nav>
+</header>
+
+<div class="hero">
+<h1>Fresh Cans.<br>Clean Start.</h1>
+<p>Professional trash can cleaning and detailing by Abel's Can Cleaners.</p>
+<a class="btn" href="#booking">Book a Cleaning</a>
+</div>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><div class="icon">🧼</div><h3>Deep Cleaning</h3><p>Thorough cleaning to remove built-up grime and mess.</p></div>
+<div class="card"><div class="icon">✨</div><h3>Deodorizing</h3><p>Freshen your trash cans and help eliminate unpleasant odors.</p></div>
+<div class="card"><div class="icon">🚿</div><h3>Detailed Rinse</h3><p>A complete rinse leaves your can clean and ready to use.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="grid">
+<div class="card"><h3>Single Can</h3><div class="price">$15</div><p>One trash can cleaning.</p></div>
+<div class="card"><h3>Two Cans</h3><div class="price">$25</div><p>Two trash cans cleaned together.</p></div>
+<div class="card"><h3>Three Cans</h3><div class="price">$35</div><p>Three trash cans cleaned together.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Before & After</h2>
+<div class="gallery">
+<div class="photo">🗑️<br>BEFORE<br><small>Add your before photo here</small></div>
+<div class="photo">✨<br>AFTER<br><small>Add your after photo here</small></div>
+</div>
+</section>
+
+<section id="booking">
+<h2>Book a Cleaning</h2>
+<form id="form">
+<label>Name</label><input id="name" required placeholder="Your name">
+<label>Email</label><input id="email" type="email" required placeholder="you@example.com">
+<label>Service</label>
+<select id="service" required><option value="">Choose one</option><option>Single Can - $15</option><option>Two Cans - $25</option><option>Three Cans - $35</option></select>
+<label>Preferred Date</label><input id="date" type="date" required>
+<label>Extra Details</label><textarea id="details" placeholder="Anything we should know?"></textarea>
+<br><br><button class="btn" type="submit">Send Booking Request</button>
+</form>
+</section>
+
+<footer>
+<strong>Abel's Can Cleaners</strong><br>Fresh Cans. Clean Start.<br>
+<a style="color:white" href="mailto:therealyou2003@gmail.com">therealyou2003@gmail.com</a>
+</footer>
+
+<script>
+document.getElementById('form').addEventListener('submit',function(e){
+e.preventDefault();
+const subject=encodeURIComponent("Booking Request - Abel's Can Cleaners");
+const body=encodeURIComponent(
+"Name: "+document.getElementById('name').value+"\n"+
+"Email: "+document.getElementById('email').value+"\n"+
+"Service: "+document.getElementById('service').value+"\n"+
+"Preferred Date: "+document.getElementById('date').value+"\n\n"+
+"Details: "+document.getElementById('details').value
+);
+location.href="mailto:therealyou2003@gmail.com?subject="+subject+"&body="+body;
+});
+</script>
+</body>
+</html>
